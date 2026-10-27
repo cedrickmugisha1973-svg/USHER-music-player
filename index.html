@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INKURU| Music Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>INKURU <span>Music Player</span></h1>
+    <label class="add-btn">
+      + Add Music
+      <input type="file" id="fileInput" accept="audio/*" multiple hidden>
+    </label>
+  </header>
+
+  <main class="player">
+    <div class="disc" id="disc">
+      <div class="disc-center">INKUR</div>
+    </div>
+
+    <p class="now-playing">NOW PLAYING</p>
+    <h2 id="songTitle">Choose your music</h2>
+    <p id="artist">INKURU MUSIC PLAYER</p>
+
+    <audio id="audio"></audio>
+
+    <div class="progress-area">
+      <input type="range" id="progress" value="0" min="0" max="100">
+      <div class="time">
+        <span id="currentTime">00:00</span>
+        <span id="duration">00:00</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="previous" title="Previous">⏮</button>
+      <button id="play" class="play-btn" title="Play">▶</button>
+      <button id="next" title="Next">⏭</button>
+    </div>
+
+    <div class="volume-area">
+      <span>🔈</span>
+      <input type="range" id="volume" min="0" max="100" value="80">
+      <span>🔊</span>
+    </div>
+
+    <button id="repeat" class="repeat-btn">↻ Repeat: Off</button>
+  </main>
+
+  <section class="playlist">
+    <h2>♫ YOUR PLAYLIST</h2>
+    <div id="songList">
+      <p class="empty">Click “Add Music” to choose songs from your computer.</p>
+    </div>
+  </section>
+
+  <footer>INKURU<span>•</span> FEEL THE MUSIC</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

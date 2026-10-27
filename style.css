@@ -1,0 +1,276 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  background:
+    radial-gradient(circle at 20% 15%, #162c69, transparent 35%),
+    radial-gradient(circle at 85% 65%, #47103f, transparent 35%),
+    #050713;
+  padding: 20px;
+}
+
+.header {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 0 25px;
+  border-bottom: 1px solid #27385b;
+}
+
+h1 {
+  font: 800 clamp(19px, 4vw, 30px) 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+}
+
+h1 span {
+  color: #00e5ff;
+  text-shadow: 0 0 15px #00e5ff;
+}
+
+.add-btn {
+  padding: 12px 18px;
+  border: 1px solid #00e5ff;
+  border-radius: 9px;
+  background: #071d31;
+  color: #00e5ff;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.player {
+  max-width: 470px;
+  margin: 35px auto 25px;
+  padding: 30px 25px;
+  text-align: center;
+  background: linear-gradient(145deg, #101b35, #090d1b);
+  border: 1px solid #293d67;
+  border-radius: 22px;
+  box-shadow: 0 15px 60px #0008, 0 0 25px #00e5ff12;
+}
+
+.disc {
+  width: 210px;
+  height: 210px;
+  max-width: 70vw;
+  max-height: 70vw;
+  margin: 0 auto 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background:
+    repeating-radial-gradient(circle, #171925 0 3px, #292b3a 4px 5px);
+  border: 5px solid #202c48;
+  box-shadow: 0 0 0 3px #00e5ff, 0 0 30px #00e5ff55;
+}
+
+.disc-center {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font: 800 18px 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, #00e5ff, #803cff, #ff258f);
+  box-shadow: 0 0 20px #803cff;
+}
+
+.disc.spinning {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.now-playing {
+  color: #00e5ff;
+  font: 11px 'Orbitron', sans-serif;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+#songTitle {
+  font-size: 21px;
+  overflow-wrap: anywhere;
+}
+
+#artist {
+  color: #9daecc;
+  font-size: 12px;
+  margin-top: 9px;
+  overflow-wrap: anywhere;
+}
+
+.progress-area {
+  margin-top: 30px;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #00e5ff;
+  cursor: pointer;
+}
+
+#progress {
+  margin: 0;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  color: #91a5c8;
+  font-size: 11px;
+  margin-top: 8px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin: 25px 0;
+}
+
+.controls button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  background: #1a2945;
+  cursor: pointer;
+  font-size: 19px;
+  transition: .2s;
+}
+
+.controls button:hover {
+  transform: scale(1.08);
+  background: #253b62;
+}
+
+.controls .play-btn {
+  width: 66px;
+  height: 66px;
+  font-size: 25px;
+  color: #050713;
+  background: linear-gradient(135deg, #00e5ff, #8a66ff);
+  box-shadow: 0 0 24px #00e5ff55;
+}
+
+.volume-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.repeat-btn {
+  margin-top: 22px;
+  border: 1px solid #354668;
+  background: transparent;
+  color: #b9c8e7;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.playlist {
+  max-width: 700px;
+  margin: 25px auto;
+  padding: 22px;
+  background: #0b1325;
+  border: 1px solid #263756;
+  border-radius: 15px;
+}
+
+.playlist h2 {
+  color: #00e5ff;
+  font: 700 15px 'Orbitron', sans-serif;
+  margin-bottom: 15px;
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 10px;
+  border-bottom: 1px solid #202c43;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.song:hover, .song.active {
+  background: #14294a;
+}
+
+.song-icon {
+  color: #00e5ff;
+  font-size: 20px;
+}
+
+.song-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.song-info strong, .song-info small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.song-info strong {
+  font-size: 13px;
+}
+
+.song-info small {
+  color: #93a6c5;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.empty {
+  padding: 20px 0;
+  color: #93a6c5;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 0 10px;
+  color: #8496b5;
+  font: 11px 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+}
+
+footer span {
+  color: #ff258f;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  .player {
+    padding: 25px 18px;
+  }
+
+  .playlist {
+    padding: 15px;
+  }
+}
